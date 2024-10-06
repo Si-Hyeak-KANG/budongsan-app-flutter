@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
+import 'package:mybudongsan/map/map_page.dart';
 
 /// 인터넷 연결 확인 및 로고 표시 후 메인 페이지 이동
 class IntroPage extends StatefulWidget {
@@ -80,6 +81,7 @@ class _IntroPage extends State<IntroPage> {
 
   Future<bool> connectCheck() async {
     var connectivityResult = await Connectivity().checkConnectivity();
+    print('con: $connectivityResult');
     return connectivityResult == ConnectivityResult.mobile ||
         connectivityResult == ConnectivityResult.wifi;
   }
