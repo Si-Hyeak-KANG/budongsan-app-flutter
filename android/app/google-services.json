@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "901129539108",
+    "firebase_url": "https://my-project-8719b-default-rtdb.firebaseio.com",
+    "project_id": "my-project-8719b",
+    "storage_bucket": "my-project-8719b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:901129539108:android:d32402e00db931a476d2b1",
+        "android_client_info": {
+          "package_name": "com.example.mybudongsan"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC04hF0SJD3BG58KGhJKTn8ejoqgwdILvs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:901129539108:android:7932c09ca964257976d2b1",
+        "android_client_info": {
+          "package_name": "com.example.personality_test_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC04hF0SJD3BG58KGhJKTn8ejoqgwdILvs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
