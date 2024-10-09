@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'map_filter.dart';
 import 'map_filter_dialog.dart';
+import 'dart:async';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class MapPage extends StatefulWidget {
   const MapPage({super.key});
@@ -12,6 +14,17 @@ class MapPage extends StatefulWidget {
 }
 
 class _MapPage extends State<MapPage> {
+
+  final Completer<GoogleMapController> _controller =
+  Completer<GoogleMapController>();
+
+  Map<MarkerId, Marker> markers = <MarkerId, Marker>{};
+
+  static const CameraPosition _googleMapCamera = CameraPosition(
+    target: LatLng(37.6462022, 126.9161727),
+    zoom: 15,
+  );
+
   int currentItem = 0;
   MapFilter mapFilter = MapFilter();
 
@@ -79,7 +92,16 @@ class _MapPage extends State<MapPage> {
           ],
         ),
       ),
-      body: currentItem == 0 ? Container() : ListView(),
+      body: currentItem == 0
+          ? GoogleMap(
+              mapType: MapType.normal,
+              initialCameraPosition: _googleMapCamera,
+              onMapCreated: (GoogleMapController controller) {
+                _controller.complete(controller);
+              },
+              markers: Set<Marker>.of(markers.values),
+            )
+          : ListView(),
       bottomNavigationBar: BottomNavigationBar(
           currentIndex: currentItem,
           onTap: (value) {
